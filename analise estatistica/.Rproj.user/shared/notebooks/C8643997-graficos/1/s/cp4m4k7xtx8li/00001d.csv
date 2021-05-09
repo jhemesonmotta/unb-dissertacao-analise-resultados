@@ -1,0 +1,3 @@
+"0",""
+"0","ggplot(data = time1, aes(y = productivity, x = week)) +"
+"0","  geom_bar(stat = ""identity"", fill = ""#0862A4"")"
