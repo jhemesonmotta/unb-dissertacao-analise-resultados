@@ -1,7 +1,7 @@
 ---
 title: "Obversações Resultados da Utilização da Produtiva"
-author: "blind"
-date: "09 de Maio de 2021"
+author: "Jhemeson Mota"
+date: "13 de Junho de 2021"
 output:
   html_document:
     highlight: pygments
@@ -20,27 +20,52 @@ library(ggplot2)
 ```{r}
 time1 <- read.csv(file="time1.csv", header=TRUE, sep=",")
 time2 <- read.csv(file="time2.csv", header=TRUE, sep=",")
-
 ```
 
 ## Gráficos:
 
-#### 1 - Evolução do Time 1 Ao Longo de 6 Semanas
+#### 1 - Evolução do Time 1 Ao Longo de 8 Semanas
 
 ```{r}
 
-ggplot(data = time1, aes(y = productivity, x = week)) +
+ggplot(data = time1, aes(y = produtividade, x = semana)) +
   geom_bar(stat = "identity", fill = "#0862A4")
 
 
 ```
 
-#### 2 - Evolução do Time 2 Ao Longo de 6 Semanas
+#### 2 - Evolução do Time 2 Ao Longo de 8 Semanas
 
 ```{r}
 
-ggplot(data = time2, aes(y = productivity, x = week)) +
+ggplot(data = time2, aes(y = produtividade, x = semana)) +
   geom_bar(stat = "identity", fill = "#0862A4")
 
 ```
 
+**Carrega os dados do CSV para o DataFrame:**
+
+```{r}
+time1Aval <- read.csv(file="time1Aval.csv", header=TRUE, sep=",")
+time2Aval <- read.csv(file="time2Aval.csv", header=TRUE, sep=",")
+```
+
+#### 3 - Avaliação do Time 1
+
+```{r}
+
+ggplot(data = time1Aval, aes(y = valor, x = q)) +
+  geom_bar(stat = "identity", fill = "#0862A4")
+
+
+```
+
+#### 4 - Avaliação do Time 2
+
+```{r}
+
+ggplot(data = time2Aval, aes(y = valor, x = q)) +
+  geom_bar(stat = "identity", fill = "#0862A4")
+
+
+```
